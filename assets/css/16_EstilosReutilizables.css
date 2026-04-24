@@ -1,0 +1,109 @@
+/* Responsive para Moviles*/
+@media(max-width:790px){
+    *{
+    font-family:"Outfit",sans-serif;
+    letter-spacing:0.12em;
+    padding:0;
+    margin:0;}
+
+    .encabezadoHeader{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    background:#0168ba;
+    padding: 0.7em 0.5em 0.7em 0em;
+    width:98.vw;}
+
+            .encabezadoHeader img{filter:drop-shadow(3px 3px 8px rgba(255,255,255,.7));}
+
+            .detalleTEXT{}
+                    .detalleTEXT h4{
+                    font-weight:700;
+                    font-size:1.3em;
+                    border-left:0.2em solid #ebebeb;
+                    padding:0.7em 0em 0.7em 0.7em;
+                    margin-bottom:0.5em;
+                    color:#ebebeb;}
+
+                    .detalleTEXT p{
+                        font-size:1.1em;
+                        color:#ebebeb;
+                        text-align:justify;}
+
+    .wts{
+    font-size:3.7em;
+    color:#08a434;
+    position:fixed;
+    bottom:5%;
+    right:4%;
+    filter:drop-shadow(2px 2px 2px black);
+    transition:.7s;}
+    .wts:hover{font-size:3.9em;filter:drop-shadow(4px 5px 2px black);}
+
+    .tiendaOnLine img{
+    position:fixed;
+    bottom:3%;
+    left:50%;
+    transform: translateX(-50%);
+    width:3em;
+    height:3em;
+    padding:0.7em;
+    background: #fff;
+    border:0.7em solid #00baf5;
+    border-radius:50%;
+    transition:.7s;}
+    .tiendaOnLine img:hover{width:4em;height:4em;border:0.2em solid #00baf5;}
+
+/*=============== articulos a la venta ===============*/
+    article{
+    width:90vw;
+    margin:auto;
+    margin-top:2em;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.5em;
+    padding-top:2em;
+    padding-bottom:2em;
+    background:rgba(0, 0, 0, .2);}
+
+            article img{width:15em;height:14em;}
+
+            .contenido{
+            border:2px solid #fff;
+            width:61%;
+            padding:1em;}
+
+                    .contenido h2{font-size:1.2em;}
+                    .det{font-size:1em;color:black;}
+                    #enStock{
+                    font-size:1em;
+                    background:#0ed145;
+                    padding:1em 0em;
+                    margin-top:0.6em;
+                    text-align:center;}
+
+                    #comprarBTN{
+                    background:#f9c105;
+                    font-size:1em;
+                    padding:1em 0em;
+                    margin-top:0.6em;
+                    transition:.7s;
+                    border:none;}
+                    #comprarBTN:hover{box-shadow:4px 4px 7px rgba(0, 0, 0, .7);}
+
+                    .disponible{
+                        background: green;
+                        color: #fff;
+                        width: fit-content;
+                        font-size: 1em;
+                        padding: 0.5em 1.5em;
+                    }
+                    .agotado{
+                        background: red;
+                        color: #fff;
+                        width: fit-content;
+                        font-size: 1em;
+                        padding: 0.5em 1.5em;
+                    }
+}

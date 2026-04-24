@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tienda Dña. Sandra</title>
+	<!--Icono de pestaña para desktop-->
+	<!--<link rel="icon" href="https://res.cloudinary.com/dt6e5g260/image/upload/v1776214522/Desktop32_g8gif7.png">-->
+
+	<link rel="manifest" href="/manifest.json"><!--Conectamos el manifest en nuestro HTML (icono movil)-->
+	<meta name="theme-color" content="#000000"><!--Conectamos el manifest en nuestro HTML (icono movil)-->
+
+	<!--Soporte para iPhone. No usan manifest.JSON igual que Android, asi que necesitamos esto:-->
+	<link rel="apple-touch-icon" href="https://res.cloudinary.com/dt6e5g260/image/upload/v1776213253/Ios180_veuuxx.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+	<!--Estilo de texto OUTFIT-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+	<!--Hojas de Estilo CSS-->
+	<link rel="stylesheet" href="assets/css/1_MenuPrincipal.css">
+</head>
+<body>
+	<!--Para Laptops, Desktop, Gamers, Not Found-->
+	<div class="notFoundIMG"><img src="img/NotFound.PNG"></div>
+
+	<!--Para moviles Disponible-->
+	<main class="menuPrincipal">
+		<img class="logoEmpresaImgClass" src="./img/1.PNG"><br>
+		<p id="abiertoCerradoP-ID">Cargando...</p>
+		<div class="globoCLASS">
+		    <a href="assets/html/3_TiendaOnLine.html" class="tiendaOnLine"><img src="./img/Tienda.PNG"></a><!-- Tienda IMG -->
+		    <a href="assets/html/4_Abarrotes.html" class="itemIMG"><img src="./img/Abarrotes.PNG"></a><!-- ProductosPNG -->
+		    <a href="assets/html/5_Aseo.html" class="itemIMG"><img src="./img/Aseo.PNG"></a>
+		    <a href="assets/html/6_Caramelos.html" class="itemIMG"><img src="./img/Caramelos.PNG"></a>
+		    <a href="assets/html/7_Condimentos.html" class="itemIMG"><img src="./img/Condimentos.PNG"></a>
+		    <a href="assets/html/8_Desayuno.html" class="itemIMG"><img src="./img/Desayuno.PNG"></a>
+		    <a href="assets/html/9_Energeticos.html" class="itemIMG"><img src="./img/Energeticos.PNG"></a>
+		    <a href="assets/html/10_Frial.html" class="itemIMG"><img src="./img/Frial.PNG"></a>
+		    <a href="assets/html/11_Galletas.html" class="itemIMG"><img src="./img/Varios.PNG"></a>
+		    <a href="assets/html/12_Gaseosa.html" class="itemIMG"><img src="./img/Gaseosa.PNG"></a>
+		    <a href="assets/html/13_Masitas.html" class="itemIMG"><img src="./img/Masitas.PNG"></a>
+		    <a href="assets/html/14_Lacteos.html" class="itemIMG"><img src="./img/Lacteos.PNG"></a>
+		    <a href="assets/html/14_Modista.html" class="itemIMG"><img src="./img/Modista.PNG"></a>
+		</div>
+	</main>
+
+	<script src="assets/js/2_MenuPrincipal.js"></script>
+	<script src="assets/js/19_AbiertoCerrado.js"></script><!--Añadimos este archivo donde daremos dinamismo a:-->
+	<!--<p id="abiertoCerradoP-ID">Cargando...</p> ABIERTO CERRADO-->
+	
+	<!--Registramos como una APP real en Movil-->
+	<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/service-worker.js');}</script>
+</body>
+</html>

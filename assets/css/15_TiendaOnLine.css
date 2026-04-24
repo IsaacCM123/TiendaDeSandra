@@ -1,0 +1,125 @@
+/* Responsive para Moviles*/
+@media(max-width:790px){
+
+*{font-family:"Outfit",sans-serif;letter-spacing:0.1em;padding:0;margin:0;text-decoration:none;}
+.usuario{
+    font-size:4em;
+    color:#0064b6;
+    position:absolute;
+    top:1%;
+    right:2%;}
+
+.centrar{
+    width:85%;
+    height:27vh;
+    margin:auto;
+    margin-top:1em;
+    margin-bottom:2em;}
+
+.logoTiendaSandra{
+    width:100%;
+    height:100%;}
+
+.bloque-1-Vertical{
+    width:90%;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:0.5em;}
+
+.bloque-2-Horizontal{
+    display:flex;
+    justify-content:center;
+    gap:0.5em;}
+
+.bloqueAncla{
+    background:linear-gradient(to top,#b78bb8,#6ac98b);
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:1em 0.8em;
+    border-radius:1em;
+    transition:.7s;}
+    .bloqueAncla:hover{box-shadow:4px 4px 10px black;}
+
+.bloqueAncla p{
+    color:#FFF;
+    height:3em;
+    font-size:1em;
+    margin-top:0.2em;}
+
+.tvnIcon, .wtsIcon, .ubiIcon, .sugIcon{
+    font-size:4em;
+    color:#FFF;}
+
+/*============ Fondo oscuro ============*/
+#ventanaModal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;}
+
+.contenidoCajasTexto{
+    background:#fff;
+    width:75%;
+    border-radius:0.4em;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:2em 0em 2em 0em;
+    animation:fadeIn .7s ease;
+    position:relative;}
+    @keyframes fadeIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);}}
+
+.cerrar{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:25px;}
+
+#textID{
+    border:1px solid #929292;
+    font-size:1em;
+    padding:0.5em;
+    margin-top:0.7em;}
+
+#passID{
+    border:1px solid #929292;
+    font-size:1em;
+    padding:0.5em;
+    margin-top:0.7em;}
+
+#ingresarBTN{
+    width:fit-content;
+    padding:0.5em 2em;
+    font-size:1em;
+    background:#4961b9;
+    margin-top:1em;
+    color:#fff;}
+
+#emoji ion-icon{
+    color:#0064b6;
+    font-size:3em;
+    margin-top:0.1em;}
+
+.tiendaOnLine img{
+    position:fixed;
+    bottom:3%;
+    left:50%;
+    transform: translateX(-50%);
+    width:3em;
+    height:3em;
+    padding:0.7em;
+    background: #fff;
+    border:0.7em solid #00baf5;
+    border-radius:50%;
+    transition:.7s;}
+    .tiendaOnLine img:hover{width:4em;height:4em;border:0.2em solid #00baf5;}
+}

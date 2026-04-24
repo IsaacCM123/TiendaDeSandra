@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--Estilo de texto OUTFIT-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="../css/15_TiendaOnLine.css">
+</head>
+<body>
+
+	<!--Icono del administrador, registrar para que tenga privilegios en Abierto o Cerrado. Va junto con MODAL-->
+	<ion-icon class="usuario" onclick="abrirModal()" name="person-circle-sharp"></ion-icon>
+	<div class="centrar"><img class="logoTiendaSandra" src="../../img/1.PNG"></div>
+
+	<div class="bloque-1-Vertical">
+		<div class="bloque-2-Horizontal">
+			<a href="https://superlibro.tv/all-videos?filter=episode_clips&episode_id=1718586" class="bloqueAncla">
+				<ion-icon name="desktop-outline"class="tvnIcon"></ion-icon><p>TV - Cristiana Conoce a Dios!</p>
+			</a>
+			<a  href="https://wa.me/59171708331" class="bloqueAncla">
+				<ion-icon name="logo-whatsapp"class="wtsIcon"></ion-icon><p>Contactate! con Dña. Sandra</p>
+			</a>
+		</div>
+		<div class="bloque-2-Horizontal">
+			<a href="https://maps.app.goo.gl/zBtXmLwybqf8wQ9h7?g_st=aw" class="bloqueAncla">
+				<ion-icon name="location"class="ubiIcon"></ion-icon><p>P. Linea 135 ban. Rojo y azul</p>
+			</a>
+			<a href="#" class="bloqueAncla">
+				<ion-icon name="mail-unread-sharp"class="sugIcon"></ion-icon><p>Nuestro buzon de sugerencias</p>
+			</a>
+		</div>
+	</div>
+
+	<a href="../../index.html" class="tiendaOnLine"><img src="../../img/Tienda1.PNG"></a>
+
+	<!--Modal para el administrador (Sandra)-->
+	<div id="ventanaModal">
+		<div class="contenidoCajasTexto">
+			<ion-icon name="close-sharp" class="cerrar" onclick="cerrarModal()"></ion-icon>
+			<input type="text" id="textID" placeholder="Nombre...">
+			<input type="password" id="passID" placeholder="Codigo...">
+			<p id="ingresarBTN">Ingresar</p>
+			<small id="emoji"><ion-icon name="person-circle-sharp"></ion-icon></small>
+			<!--Despues de terminar el Frontend, damos valores a LocalStorage Ejm:("admin","true")-->
+			<!--Atravez de una contraseña. Para ello en la carpeta JS nos creamos un script 18_Ecko.JS-->
+		</div>
+	</div>
+
+
+    <script>
+    	function abrirModal(){document.getElementById("ventanaModal").style.display="flex";}
+	    function cerrarModal() {document.getElementById("ventanaModal").style.display="none";}
+    </script>
+
+	<script type="module"src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script type="module" src="../js/17_Extend.js"></script><!--Despues de 18_Ecko.JS-->
+	<script type="module" src="../js/18_Ecko.js"></script><!--Una vez terminado de validar el localStorage. Trabajamos en 17_Extend.js-->
+
+	<!--Registramos como una APP real en Movil-->
+	<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/service-worker.js');}</script>
+</body>
+</html>
