@@ -1,9 +1,9 @@
 const socket = io()
 
 let articulos = [
-    { nombre:'Fideo',detalle:'Sachets 400g',precio:5.6,img:'../../img/Productos/Abarrotes/1.JPG'},
-    { nombre:'Macarron',detalle:'Sachets 400g',precio:7.85,img:'../../img/Productos/Abarrotes/2.JPG'},
-    { nombre:'Macarron',detalle:'Sachets 400g',precio:30,img:'../../img/Productos/Abarrotes/3.JPG'}
+    { nombre:'Fideo',detalle:'Sachets 400g',precio:5.6,img:'./../../img/Productos/Abarrotes/1.jpg'},
+    { nombre:'Macarron',detalle:'Sachets 400g',precio:7.85,img:'./../../img/Productos/Abarrotes/2.jpg'},
+    { nombre:'Macarron',detalle:'Sachets 400g',precio:30,img:'./../../img/Productos/Abarrotes/3.jpg'}
 ]
 
 const producto = document.getElementById('productoID')
