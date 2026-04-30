@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Tienda Dña. Sandra</title>
+
 	<!--Estilo de texto OUTFIT-->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,51 +14,21 @@
 <body>
 	
 	<header class="encabezadoHeader">
-		<img src="../../img/Caramelos.PNG">
+		<img src="./../../img/Caramelos.png">
 		<div class="detalleTEXT">
 			<h4>Golosinas</h4>
 			<p>Productos de<br>Caramelos en general.</p>
 		</div>
 	</header>
 
-	<article><!--Articulo 1-->
-		<img src="../../img/Abarrotes/aceite.JPG">
-		<div class="contenido">
-			<h2>Aceite Soya</h2>
-			<p class="det">1L.</p>
-			<p class="det">Bs. 20</p>
-			<p id="enStock">Disponible</p>
-			<button id="comprarBTN">Comprar ahora</button>	
-		</div>
-	</article>
+	<article id="productoID"><!--Implementamos desde 22_ProdDeCaramelosDisponibleAgotadoEditPrecio.JS--></article>
 
-	<article><!--Articulo 2-->
-		<img src="../../img/Abarrotes/aceite.JPG">
-		<div class="contenido">
-			<h2>Aceite Soya</h2>
-			<p class="det">1L.</p>
-			<p class="det">Bs. 20</p>
-			<p id="enStock">Disponible</p>
-			<button id="comprarBTN">Comprar ahora</button>	
-		</div>
-	</article>
+	<a href="https://wa.me/59171708331"><ion-icon class="wts" name="logo-whatsapp"></ion-icon></a>
+	<a href="../../index.html" class="tiendaOnLine"><img src="./../../img/Tienda1.png"></a>
 
-	<article><!--Articulo 3-->
-		<img src="../../img/Abarrotes/aceite.JPG">
-		<div class="contenido">
-			<h2>Aceite Soya</h2>
-			<p class="det">1L.</p>
-			<p class="det">Bs. 20</p>
-			<p id="enStock">Disponible</p>
-			<button id="comprarBTN">Comprar ahora</button>	
-		</div>
-	</article>
-	
-	<a href="https://wa.me/59163949292"><ion-icon class="wts" name="logo-whatsapp"></ion-icon></a>
-	<a href="../../index.html" class="tiendaOnLine"><img src="../../img/Tienda1.PNG"></a>
-
+	<script src="/socket.io/socket.io.js"></script><!--Implementamos dependencia para actualizacion en tiempo real con Node.JS-->
+	<script src="../js/22_ProdDeCaramelosDisponibleAgotadoEditPrecio.js"></script><!--Implemen DisponibleAgotadoEditPrecio con Node.JS-->
 	<script type="module"src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-	<!--<script src="../js/sss.js"></script>-->
 
 	<!--Registramos como una APP real en Movil-->
 	<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/service-worker.js');}</script>

@@ -1,23 +1,26 @@
 const socket = io()
 
 let articulos = [
-    { nombre:'Fideo',detalle:'Sachets 400g',precio:5.6,img:'./../../img/Productos/Abarrotes/1.jpg'},
-    { nombre:'Macarron',detalle:'Sachets 400g',precio:7.85,img:'./../../img/Productos/Abarrotes/2.jpg'},
-    { nombre:'Macarron',detalle:'Sachets 400g',precio:30,img:'./../../img/Productos/Abarrotes/3.jpg'}
+    {nombre:'Fideos',detalle:'Sachets 400g',precio:1,img:'./../../img/Productos/Abarrotes/1.jpg'},
+    {nombre:'Macarron',detalle:'Sachets 400g',precio:1,img:'./../../img/Productos/Abarrotes/2.jpg'},
+    {nombre:'Macarron',detalle:'Sachets 400g',precio:1,img:'./../../img/Productos/Abarrotes/3.jpg'},
+    {nombre:'Fideos',detalle:'Nidito Sachets 400g',precio:1,img:'./../../img/Productos/Abarrotes/4.jpg'},
+    {nombre:'Aceite',detalle:'900ml',precio:1,img:'./../../img/Productos/Abarrotes/5.jpg'},
+    {nombre:'Harina',detalle:'De Trigo 1k',precio:1,img:'./../../img/Productos/Abarrotes/6.jpg'}
 ]
 
 const producto = document.getElementById('productoID')
 
 function render(data) {
-  producto.innerHTML = "";
+  producto.innerHTML = ""
 
   articulos.forEach((art, i) => {
-    const estadoPro = data.estadoProducto[i];
+    const estadoPro = data.estadoProducto[i]
 
-    const card = document.createElement('div');
-    card.className = 'card';
+    const targeta = document.createElement('div')
+    targeta.className = 'targeta'
 
-   card.innerHTML = `
+   targeta.innerHTML = `
       <img src="${art.img}" />
       <div class="contenido">
           <h2>${art.nombre}</h2>
@@ -25,11 +28,11 @@ function render(data) {
 
           <!--1. Precio editable. Solo Administrados (Sandra)-->
           ${localStorage.getItem("admin") === "true"
-            ? `<p contenteditable="true" onblur="actualizarPrecio(${i}, this.innerText)">Precio: $${art.precio}</p>`
-            : `<p>Precio: $${art.precio}</p>`
+            ? `<p contenteditable="true" onblur="actualizarPrecio(${i}, this.innerText)"><b>Bs.</b> ${art.precio}</p>`
+            : `<p><b>Bs.</b> ${art.precio}</p>`
           }
 
-          <!-- 2. Estado clickeable solo admin -->
+          <!--2. Estado clickeable solo admin-->
           <p id="Estado" 
              class="${estadoPro ? 'disponible' : 'agotado'}" 
              ${localStorage.getItem("admin") === "true"
@@ -37,14 +40,14 @@ function render(data) {
                : ``}>
             ${estadoPro ? 'Disponible' : 'Agotado'}
           </p>
+          <button class="carrito"><ion-icon name="cart-outline"></ion-icon>Agregar +</button>
       </div>
-    `;
-
-    producto.appendChild(card);
+    `
+    producto.appendChild(targeta)
   })
 }
 
-function cargarTodo() {
+function cargarTodo(){
   Promise.all([
     fetch('/estadoPro').then(res => res.json()),
     fetch('/precios').then(res => res.json())
@@ -53,7 +56,7 @@ function cargarTodo() {
       ...art,
       precio: preciosData[i]
     }))
-    render(estadoData);
+    render(estadoData)
   })
 }
 
@@ -82,13 +85,11 @@ socket.on('precioActualizado', (preciosData)=>{
 cargarTodo()
 
 function actualizarPrecio(index, texto) {
-  const precio = parseFloat(texto.replace(/[^0-9.]/g, ''));
-
-  if (isNaN(precio)) return;
-
+  const precio = parseFloat(texto.replace(/[^0-9.]/g, ''))
+  if (isNaN(precio)) return
   fetch('/precios', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ index, precio })
-  });
+  })
 }
