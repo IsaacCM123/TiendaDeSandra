@@ -35,11 +35,12 @@
 
 .wts{
         font-size:3.7em;
-        color:#08a434;
+        color:green;
         position:fixed;
         top:22%;
         right:4%;
         filter:drop-shadow(2px 2px 2px #000);
+        z-index:25;
         transition:.7s;}
         .wts:hover{font-size:3.9em;filter:drop-shadow(4px 5px 2px black);}
 
@@ -54,6 +55,7 @@
         background: #fff;
         border:0.7em solid #00baf5;
         border-radius:50%;
+        z-index: 10;
         transition:.7s;}
         .tiendaOnLine img:hover{width:4em;height:4em;border:0.2em solid #00baf5;}
 
@@ -71,7 +73,11 @@
         background:rgba(0,0,0,.2);
         margin-bottom:4em;}
 
-.targeta{  }
+
+/*Es necesario que .targeta{ position:relative; } tenga position relative, 
+  para el Mini Menu Cantidad: .miniMenuCantidad{ position: absolute; } */
+.targeta{ position:relative; }
+
 .targeta img{width:16em;height:13.4em;}
 
 .contenido{
@@ -93,7 +99,7 @@
 .disponible{background:green;}
 .agotado{background:red;}
 
-.carrito{
+.agregarAlCarritoBTN{
         font-size:1.05em;
         display:flex;
         align-items:center;
@@ -103,7 +109,7 @@
         background:#efb810;
         box-shadow:3px 3px 5px #000;
         transition:.5s;}
-        .carrito:hover{background:#d7a50c;box-shadow:1px 1px 1px #000;}
+        .agregarAlCarritoBTN:hover{background:#d7a50c;box-shadow:1px 1px 1px #000;}
 
-.carrito ion-icon{font-size:2em;}
+.agregarAlCarritoBTN ion-icon{font-size:2em;}
 }

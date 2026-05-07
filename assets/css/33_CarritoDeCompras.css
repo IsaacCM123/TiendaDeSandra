@@ -1,0 +1,182 @@
+/* Responsive para Moviles*/
+@media(max-width:790px){
+
+.posicionFixed{/*Contenedor solo!! del Carrito Principal*/
+    position:fixed;
+    bottom:3%;
+    left:5%;
+    z-index:25;}
+
+.iconoCarritoPrincipalCLASS{
+    position:relative;
+    width:fit-content;}
+
+.iconoCarritoPrincipalCLASS ion-icon{
+    font-size:4.4em;
+    color:#085c9f;
+    filter:drop-shadow(2px 4px 7px white);}
+
+#notificacionTotalArticulosID{
+    font-size:0.8em;
+    background:red;
+    color:white;
+    position:absolute;
+    right:0px;
+    top:0px;
+    width:22px;
+    height:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    padding:0.2em;
+    filter:drop-shadow(2px 4px 6px black);}
+
+/*--------------------Panel Del Carrito Principal--------------------*/
+.panelDelCarritoPrincipal{
+    position:fixed;
+    top:0;
+    width:100%;
+    height:100vh;
+    background:#e7e8ff;
+    z-index:30;
+    display:flex;/*Para bajar el Footer funciona con #articulosDeMiCarritoID flex:1;*/
+    flex-direction:column;/*Para bajar el Footer funciona con #articulosDeMiCarritoID flex:1;*/
+    right:-375px;/*Deslizar hacia la mano derecha como cortina al panel*/
+    transition:.7s;}
+
+.panelDelCarritoPrincipal.active{right:0;}
+
+.headerMiCarritoCLASS{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:1.5em 1em;
+    background:#0362ad;}
+
+.headerMiCarritoCLASS h3{color:#fff;font-size:1.1em;}
+
+#cerrarPanelDeMiCarritoID{
+    font-size:1.6em;
+    background:red;
+    color:#fff;
+    padding:0.2em;
+    border-radius:5px;}
+
+#articulosDeMiCarritoID{
+    flex:1;/*Para que el footer se vaya abajo*/
+    overflow-y:auto;/*Para que no le empuje hacia abajo al footer WhatsApp*/
+    padding:20px;}
+
+/*Aqui viene el contenido de #articulosDeMiCarritoID desde javascript INICIO*/
+.articulosEnElCarrito{
+    margin-bottom:20px;
+    background:#fff;
+    padding:15px;
+    border-radius:7px;
+    border-bottom:1px solid #7e7e7e;}
+
+.articulosEnElCarrito h4{font-size:1.1em;color:#000;}
+
+.articulosEnElCarrito p{color:#111;font-size:1em;}
+
+.delete-btn{
+    border:none;
+    background:#f0c3c3;
+    font-size:0.9em;
+    padding:0.6em;
+    margin-top:0.5em;
+    color:#000;
+    border-radius:5px;}
+/*Aqui viene el contenido de #articulosDeMiCarritoID desde javascript FINAL*/
+
+.footerDelPanelCLASS{padding:15px;border-top:1px solid #7e7e7e;}
+
+.footerDelPanelCLASS h3{font-size:1.1em;color:#111;}
+
+#enviarPedidoPorWhatsappAlDuenoID{
+    background:#00ba00;
+    color:#fff;
+    font-size:1em;
+    border:none;
+    width:100%;
+    padding:15px 0px;
+    margin-top:10px;
+    border-radius:7px;}
+
+/*..............MINI MENU..............*/
+
+.miniMenuCantidad{
+    position:absolute;/*Pierde su posicion original*/
+    left:50%;
+    top:63%;
+    transform:translate(-50%,-50%);
+    width:217px;
+    box-shadow:9px 9px 20px rgba(0,0,0,.7);
+    border-radius:10px;
+    background:#fff;
+    display:none;
+    padding:20px;
+    z-index:5;
+}
+.miniMenuCantidad.active{display:block;}
+
+.cerrarMenu{
+    color:#000;
+    font-size:1.5em;
+    margin-left:90%;
+    transition:.7s}
+.cerrarMenu:hover{color:#616161;}
+
+.miniMenuCantidad h4{
+    color: #111;
+    font-size: 1em;
+}
+
+.contador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: fit-content;
+    margin: 20px auto;}
+
+.contador button{
+    font-size: 1.5em;
+    background: #3c4a4a;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+}
+
+.cantidad{
+    color: #000;
+    font-weight: 900;
+}
+
+.confirmarBTN{
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 7px;
+    background: green;
+    color: white;
+    font-size: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

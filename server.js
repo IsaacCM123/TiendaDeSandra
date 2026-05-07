@@ -382,11 +382,22 @@ function leerComentarios() {
         .split("\n")
         .filter(line => line.trim() !== "")
         .map(line => JSON.parse(line))
-        .reverse()}//========================================últimos primero
+        .reverse()}//últimos son primero
 
 // Guardar comentario
 function guardarComentario(comentario) {
     fs1.appendFileSync(ArchivoBuzonDeSugerencias, JSON.stringify(comentario) + "\n")}
+
+// Funcion Eliminar Comentario........
+function eliminarComentario(id){
+  const comentarios=leerComentarios()
+  const filtrados=comentarios.filter(c=>c.id!=id)
+  const nuevoContenido=filtrados
+    .reverse()
+    .map(c=>JSON.stringify(c))
+    .join('\n')
+  fs1.writeFileSync(ArchivoBuzonDeSugerencias, nuevoContenido+'\n','utf-8')
+}
 
 // API para obtener comentarios
 app.get("/comentarios", (req, res) => {
@@ -394,6 +405,12 @@ app.get("/comentarios", (req, res) => {
 
 // Socket.io
 io.on("connection", (socket) => {
+    //Agragemos...
+    socket.on('eliminar-comentario',(id)=>{
+      eliminarComentario(id)
+      io.emit('comentario-eliminado',id)
+    })
+
     console.log("Usuario conectado")
     socket.on("nuevo-comentario", (data) => {
         guardarComentario(data)

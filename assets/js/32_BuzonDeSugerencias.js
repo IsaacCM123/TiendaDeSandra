@@ -70,6 +70,7 @@ function enviarComentario(){
     else{
         if (!usuario) return
         const data={
+            id: Date.now(),//Implementando ID único...
             usuario,
             comentario: texto,
             fecha: new Date().toLocaleString()}
@@ -82,13 +83,25 @@ function enviarComentario(){
 // Mostrar comentario
 function agregarComentario(data) {
     const li=document.createElement("li")
+    li.id='comentario-'+data.id
+    const admin=localStorage.getItem('admin')
+    let botonEliminar=''
+    if(admin==='true'){
+        botonEliminar=`<button onclick="eliminarComentario(${data.id})">🗑️</button>`
+    }
+
     li.innerHTML = `
         <strong>${data.usuario}</strong><br>
         ${data.comentario}<br>
-        <small>${data.fecha}</small>
+        <small>${data.fecha}</small><br>
+        ${botonEliminar}
     `
     listaID.prepend(li)}
 
+//Escuchar Eliminacion en tiempo real nuevo....
+function eliminarComentario(id) {
+    socket.emit("eliminar-comentario", id)
+}
 
 
 // Cargar existentes
@@ -98,6 +111,13 @@ async function cargarComentarios() {
     data.reverse().forEach(agregarComentario)
 }
 
+
+socket.on("comentario-eliminado", (id) => {
+    const elemento = document.getElementById("comentario-" + id)
+    if (elemento) {
+        elemento.remove()
+    }
+})
 
 
 // Escuchar tiempo real
