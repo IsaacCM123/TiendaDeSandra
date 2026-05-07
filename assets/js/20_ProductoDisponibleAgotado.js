@@ -206,8 +206,7 @@ enviarWhatsApp.addEventListener('click',()=>{
   if(carrito.length===0){
     alert('El carrito esta vacio!')
     return}
-  let mensaje='*Hola Dña. Sandra!🙂‍*'
-  let mensaje='Este es mi pedido %0A%0A'
+  let mensaje='*Hola Dña. Sandra!🙂‍* %0A Este es mi pedido %0A%0A'
   let totalWSP=0
 
   carrito.forEach(producto=>{
