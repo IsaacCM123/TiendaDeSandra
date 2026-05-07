@@ -206,7 +206,7 @@ enviarWhatsApp.addEventListener('click',()=>{
   if(carrito.length===0){
     alert('El carrito esta vacio!')
     return}
-  let mensaje='*Hola Dña. Sandra!🙂‍* %0A Este es mi pedido %0A%0A'
+  let mensaje='Hola Dña. Sandra! %0A *Este es mi pedido:* %0A%0A'
   let totalWSP=0
 
   carrito.forEach(producto=>{
@@ -215,14 +215,14 @@ enviarWhatsApp.addEventListener('click',()=>{
 
     mensaje +=`*Producto:* ${producto.nombre}%0A`
     mensaje +=`*Detalle:* ${producto.detalle}%0A`
-    mensaje +=`*Precio:* *Bs.* ${producto.precio}%0A`
+    mensaje +=`*Precio: Bs.* ${producto.precio}%0A`
     mensaje +=`*Unidades:* ${producto.unidades}%0A`
-    mensaje +=`*Subtotal:* *Bs.* ${Math.round(subtotal*100)/100}%0A%0A`
+    mensaje +=`*Subtotal: Bs.* ${Math.round(subtotal*100)/100}%0A%0A`
   })
 
   mensaje+=`================%0A`
-  mensaje+=`*TOTAL A PAGAR:* *bs.* ${Math.round(totalWSP*100)/100}%0A`
-  mensaje+='*Le llamo para que me envie de su QR 📲, gracias!*'
+  mensaje+=`*TOTAL A PAGAR: bs.* ${Math.round(totalWSP*100)/100}%0A`
+  mensaje+='*Le llamo para que me envie de su QR, gracias!*'
 
   //Numero del dueño...
   const celular='59171708331'
