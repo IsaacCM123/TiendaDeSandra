@@ -51,11 +51,11 @@ function render(data) {
             ${estadoPro ? 'Disponible' : 'Agotado'}
           </p>
 
-          <!--Agregar Al Carrito los Articulos Seleccionados-->
+          <!--4. Agregar Al Carrito los Articulos Seleccionados-->
           <button class="agregarAlCarritoBTN"><ion-icon name="cart-outline"></ion-icon>Agregar +</button>
       </div>
 
-      <!--Click derecho y seleccionar cuantos articulos quieres-->
+      <!--5. Click derecho y seleccionar cuantos articulos quieres-->
       <div class="miniMenuCantidad">
           <ion-icon class="cerrarMenu" name="close"></ion-icon>
           <h4>Cuantas Unidades??</h4>
@@ -135,7 +135,7 @@ function render(data) {
   })
 }
 
-
+//Copiar este Codigo..............INICIO..............
 //6 Guardar al localStorage
 function guardarCarrito(){
   localStorage.setItem('carrito',JSON.stringify(carrito))
@@ -232,6 +232,7 @@ enviarWhatsApp.addEventListener('click',()=>{
 })
 
 actualizarCarrito()
+//Copiar este Codigo..............FINAL..............
 
 
 

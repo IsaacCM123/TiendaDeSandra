@@ -178,6 +178,24 @@ app.use(express.json())//2-Estado:Abierto,Cerrado.
                 })//Estado del Producto: Disponible Agotado.
                 //===========================================================================================================
 
+                //=====================================Producto Masitas: Disponible Agotado=================================
+                const estadoPathMasita = path.join(DATA_DIR, 'disponibleAgotadoMasitas.json')//Estado del Producto: Disponible Agotado.
+                // Obtener estado
+                app.get('/disponibleAgotadoMasitas', (req, res) => {//Estado del Producto: Disponible Agotado.
+                  const data = fs.readFileSync(estadoPathMasita)//Estado del Producto: Disponible Agotado.
+                  res.json(JSON.parse(data))//Estado del Producto: Disponible Agotado.
+                })//Estado del Producto: Disponible Agotado.
+                //Cambiar estado (solo admin)
+                app.post('/disponibleAgotadoMasitas', (req, res) => {//Estado del Producto: Disponible Agotado.
+                const { index, value } = req.body//Estado del Producto: Disponible Agotado.
+                const data = JSON.parse(fs.readFileSync(estadoPathMasita))//Estado del Producto: Disponible Agotado.
+                data.estadoDelProdMasita[index] = value//Estado del Producto: Disponible Agotado.
+                fs.writeFileSync(estadoPathMasita, JSON.stringify(data, null, 2))//Estado del Producto: Disponible Agotado.
+                io.emit('estadoActualizadoMasita', data)//Estado del Producto: Disponible Agotado.
+                res.json({ ok: true })//Estado del Producto: Disponible Agotado.
+                })//Estado del Producto: Disponible Agotado.
+                //===========================================================================================================
+
                 //=====================================Producto Lacteo: Disponible Agotado=================================
                 const estadoPathLacteo = path.join(DATA_DIR, 'disponibleAgotadoLacteo.json')//Estado del Producto: Disponible Agotado.
                 // Obtener estado
@@ -192,6 +210,24 @@ app.use(express.json())//2-Estado:Abierto,Cerrado.
                 data.estadoDelProdLacteo[index] = value//Estado del Producto: Disponible Agotado.
                 fs.writeFileSync(estadoPathLacteo, JSON.stringify(data, null, 2))//Estado del Producto: Disponible Agotado.
                 io.emit('estadoActualizadoLacteo', data)//Estado del Producto: Disponible Agotado.
+                res.json({ ok: true })//Estado del Producto: Disponible Agotado.
+                })//Estado del Producto: Disponible Agotado.
+                //===========================================================================================================
+
+                //=====================================Producto Modistas: Disponible Agotado=================================
+                const estadoPathModista = path.join(DATA_DIR, 'disponibleAgotadoModista.json')//Estado del Producto: Disponible Agotado.
+                // Obtener estado
+                app.get('/disponibleAgotadoModista', (req, res) => {//Estado del Producto: Disponible Agotado.
+                  const data = fs.readFileSync(estadoPathModista)//Estado del Producto: Disponible Agotado.
+                  res.json(JSON.parse(data))//Estado del Producto: Disponible Agotado.
+                })//Estado del Producto: Disponible Agotado.
+                //Cambiar estado (solo admin)
+                app.post('/disponibleAgotadoModista', (req, res) => {//Estado del Producto: Disponible Agotado.
+                const { index, value } = req.body//Estado del Producto: Disponible Agotado.
+                const data = JSON.parse(fs.readFileSync(estadoPathModista))//Estado del Producto: Disponible Agotado.
+                data.estadoDelProdModista[index] = value//Estado del Producto: Disponible Agotado.
+                fs.writeFileSync(estadoPathModista, JSON.stringify(data, null, 2))//Estado del Producto: Disponible Agotado.
+                io.emit('estadoActualizadoModista', data)//Estado del Producto: Disponible Agotado.
                 res.json({ ok: true })//Estado del Producto: Disponible Agotado.
                 })//Estado del Producto: Disponible Agotado.
                 //===========================================================================================================
@@ -340,6 +376,22 @@ app.use(express.json())//2-Estado:Abierto,Cerrado.
                                                           })
                                                           // ========================================================================
 
+                                                          // ==================NUEVO: Actualizar precio Masitas======================
+                                                          const preMasitas = path.join(DATA_DIR, 'precioDeLasMasitas.json')
+                                                          app.get('/precioDeLasMasitas', (req, res) => {
+                                                            const data = JSON.parse(fs.readFileSync(preMasitas))
+                                                            res.json(data)
+                                                          })
+                                                          app.post('/precioDeLasMasitas', (req, res) => {
+                                                            const { index, arrayJsonPrecMasita } = req.body
+                                                            const data = JSON.parse(fs.readFileSync(preMasitas))
+                                                            data[index] = arrayJsonPrecMasita
+                                                            fs.writeFileSync(preMasitas, JSON.stringify(data, null, 2))
+                                                            io.emit('PrecioActualMasita', data)
+                                                            res.json({ ok: true })
+                                                          })
+                                                          // ========================================================================
+
                                                            // ==================NUEVO: Actualizar precio Lacteos======================
                                                           const preLacteos = path.join(DATA_DIR, 'precioDeLosLacteos.json')
                                                           app.get('/precioDeLosLacteos', (req, res) => {
@@ -356,17 +408,21 @@ app.use(express.json())//2-Estado:Abierto,Cerrado.
                                                           })
                                                           // ========================================================================
 
-
-
-
-
-
-
-
-
-
-
-
+                                                           // ==================NUEVO: Actualizar precio Modistas======================
+                                                          const preModista = path.join(DATA_DIR, 'precioDeLasModistas.json')
+                                                          app.get('/precioDeLasModistas', (req, res) => {
+                                                            const data = JSON.parse(fs.readFileSync(preModista))
+                                                            res.json(data)
+                                                          })
+                                                          app.post('/precioDeLasModistas', (req, res) => {
+                                                            const { index, arrayJsonPrecModista } = req.body
+                                                            const data = JSON.parse(fs.readFileSync(preModista))
+                                                            data[index] = arrayJsonPrecModista
+                                                            fs.writeFileSync(preModista, JSON.stringify(data, null, 2))
+                                                            io.emit('PrecioActualModista', data)
+                                                            res.json({ ok: true })
+                                                          })
+                                                          // ========================================================================
 
 
 

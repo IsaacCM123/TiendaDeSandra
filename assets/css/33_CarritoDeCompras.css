@@ -126,57 +126,37 @@
     font-size:1.5em;
     margin-left:90%;
     transition:.7s}
-.cerrarMenu:hover{color:#616161;}
+    .cerrarMenu:hover{color:#616161;}
 
-.miniMenuCantidad h4{
-    color: #111;
-    font-size: 1em;
-}
+.miniMenuCantidad h4{color:#111;font-size:1em;}
 
 .contador{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    width: fit-content;
-    margin: 20px auto;}
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    width:fit-content;
+    margin:20px auto;}
 
 .contador button{
-    font-size: 1.5em;
-    background: #3c4a4a;
-    color: #fff;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: none;
-}
+    font-size:1.5em;
+    background:#3c4a4a;
+    color:#fff;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:none;}
 
 .cantidad{
-    color: #000;
-    font-weight: 900;
-}
+    color:#000;
+    font-weight:900;}
 
 .confirmarBTN{
-    width: 100%;
-    padding: 12px 0;
-    border: none;
-    border-radius: 7px;
-    background: green;
-    color: white;
-    font-size: 1em;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    width:100%;
+    padding:12px 0;
+    border:none;
+    border-radius:7px;
+    background:green;
+    color:white;
+    font-size:1em;}
 }

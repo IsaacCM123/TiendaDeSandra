@@ -117,14 +117,30 @@ body{background:linear-gradient(to top,#b78bb8,#6ac98b);}
     overflow:auto;
     margin-bottom:3em;}
 
-
 li{
+    position: relative;
     background:#fff;
     padding:10px;
     width: 80%;
     margin: 12px auto;
     border-radius:10px;}
 
+#listaID li strong{
+    font-size: 1.2em;
+}
+
+#listaID li small{
+    font-size: 14px;
+    font-weight: 900;
+    display: block;}
+
+#listaID li button{
+    position:absolute;
+    font-size:1.5em;
+    border:none;
+    background:transparent;
+    right:0%;
+    bottom:5%;}
 
 #ventanaModalID{
     position:fixed;
@@ -136,8 +152,6 @@ li{
     align-items:center;
     z-index:15;}
 
-
-
 #bloqueoID{
     position:fixed;
     width:100%;
@@ -145,7 +159,6 @@ li{
     display:none;
     background:transparent;
     z-index:10;}
-
 
 .tiendaOnLine img{
     position:fixed;

@@ -10,6 +10,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="../css/16_EstilosReutilizables.css">
+
+	<!--**************1. Añadimos 33_CarritoDeCompras.css al CARRITO**************-->
+	<link rel="stylesheet" href="../css/33_CarritoDeCompras.css">
 </head>
 <body>
 	
@@ -20,10 +23,42 @@
 			<p>Articulos de<br>costura y textil.</p>
 		</div>
 	</header>
+
+	<!--**********Empesamos añadiendo el carrito. Inicio**********-->
+	<div class="posicionFixed"><!--Es solo el icono carrito-->
+		<div class="iconoCarritoPrincipalCLASS" id="verContenidoCarritoID">
+			<ion-icon name="cart"></ion-icon>
+			<span id="notificacionTotalArticulosID">0</span>
+		</div>	
+	</div>
+
+	<!--**********Panel Del Carrito Principal**********-->
+	<!--El CLASS es para darle estilos en CSS y para activar la funcion 'active'-->
+	<!--Y el ID es para la llamada en Javascript-->
+	<div class="panelDelCarritoPrincipal" id="panelDelCarritoPrincipalID">
+		<div class="headerMiCarritoCLASS">
+			<h3>Mi carrito de Compras</h3>
+			<ion-icon id="cerrarPanelDeMiCarritoID" name="close" ></ion-icon>
+		</div>
+
+		<div id="articulosDeMiCarritoID"></div>
+
+		<div class="footerDelPanelCLASS">
+			<h3>Total: <span id="precioTotalDeMisArticulosID">Bs.0</span></h3>
+			<button id="enviarPedidoPorWhatsappAlDuenoID">
+				Comprar Pedido por WhatsApp
+			</button>
+		</div>
+	</div><!--despues del CSS, nos vamos al JS 34_CarritoDe>Compras.JS-->
+	<!--**********Empesamos añadiendo el carrito. Final***********-->
+
+	<article id="productoID"><!--Implementamos desde 35_ProdDeModistaDisponibleAgotadoEditPrecio.js--></article>
 	
 	<a href="https://wa.me/59171708331"><ion-icon class="wts" name="logo-whatsapp"></ion-icon></a>
 	<a href="../../index.html" class="tiendaOnLine"><img src="./../../img/Tienda1.png"></a>
 
+	<script src="/socket.io/socket.io.js"></script><!--Implementamos dependencia para actualizacion en tiempo real con Node.JS-->
+	<script src="../js/35_ProdDeModistaDisponibleAgotadoEditPrecio.js"></script>
 	<script type="module"src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 
 	<!--Registramos como una APP real en Movil-->
