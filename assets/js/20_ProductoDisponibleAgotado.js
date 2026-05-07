@@ -58,14 +58,14 @@ function render(data) {
       <!--Click derecho y seleccionar cuantos articulos quieres-->
       <div class="miniMenuCantidad">
           <ion-icon class="cerrarMenu" name="close"></ion-icon>
-          <h4>Selccionar Unidades</h4>
+          <h4>Cuantas Unidades??</h4>
           <div class="contador">
             <button class="menos">-</button>
             <span class="cantidad">1</span>
             <button class="mas">+</button>
           </div>
           <button class="confirmarBTN">
-            🛒 Confirmar
+            Colocar a carrito
           </button>
       </div>
     `
@@ -206,22 +206,24 @@ enviarWhatsApp.addEventListener('click',()=>{
   if(carrito.length===0){
     alert('El carrito esta vacio!')
     return}
-  let mensaje='🛒 PEDIDO DE CLIENTE %0A%0A'
+  let mensaje='*Hola Dña. Sandra!🙂‍*'
+  let mensaje='Este es mi pedido %0A%0A'
   let totalWSP=0
 
   carrito.forEach(producto=>{
     const subtotal=producto.precio*producto.unidades
     totalWSP+=subtotal
 
-    mensaje += `📦 Producto: ${producto.nombre}%0A`
-    mensaje += `📝 Detalle: ${producto.detalle}%0A`
-    mensaje += `💲 Precio: $${producto.precio}%0A`
-    mensaje += `🔢 Unidades: ${producto.unidades}%0A`
-    mensaje += `💰 Subtotal: $${Math.round(subtotal*100)/100}%0A%0A`
+    mensaje +=`*Producto:* ${producto.nombre}%0A`
+    mensaje +=`*Detalle:* ${producto.detalle}%0A`
+    mensaje +=`*Precio:* *Bs.* ${producto.precio}%0A`
+    mensaje +=`*Unidades:* ${producto.unidades}%0A`
+    mensaje +=`*Subtotal:* *Bs.* ${Math.round(subtotal*100)/100}%0A%0A`
   })
 
-  mensaje+=`====================%0A`
-  mensaje+=`TOTAL A PAGAR: bs.${Math.round(totalWSP*100)/100}`
+  mensaje+=`================%0A`
+  mensaje+=`*TOTAL A PAGAR:* *bs.* ${Math.round(totalWSP*100)/100}%0A`
+  mensaje+='*Le llamo para que me envie de su QR 📲, gracias!*'
 
   //Numero del dueño...
   const celular='59171708331'
