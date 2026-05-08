@@ -65,7 +65,7 @@ function render(data) {
             <button class="mas">+</button>
           </div>
           <button class="confirmarBTN">
-            Colocar a carrito
+            Colocar al carrito
           </button>
       </div>
     `
@@ -222,7 +222,7 @@ enviarWhatsApp.addEventListener('click',()=>{
 
   mensaje+=`================%0A`
   mensaje+=`*TOTAL A PAGAR: bs.* ${Math.round(totalWSP*100)/100}%0A`
-  mensaje+='*Le llamo para que me envie de su QR, gracias!*'
+  mensaje+='*Le llamo para que me envie su QR, gracias!*'
 
   //Numero del dueño...
   const celular='59171708331'
